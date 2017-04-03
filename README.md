@@ -8,4 +8,4 @@ You can find instructions on how to use this library [on my website here](http:/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
