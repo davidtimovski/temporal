@@ -4,7 +4,7 @@ Yet another JavaScript library for handling dates. I am well aware of the existe
 
 ## Documentation
 
-You can find instructions on how to use this library [on my website here](http://davidtimovski.com/Project/Temporal).
+You can find instructions on how to use this library [on my website here](http://davidtimovski.com/MyProjects/Temporal).
 
 ## License
 

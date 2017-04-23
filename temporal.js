@@ -1,6 +1,6 @@
 /*!
  * Temporal JavaScript library v1.2.2
- * (C) David Timovski - http://www.davidtimovski.com/Project/Temporal
+ * (C) David Timovski - http://www.davidtimovski.com/MyProjects/Temporal
  */
 
 'use strict';
