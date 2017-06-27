@@ -1,11 +1,11 @@
 /*!
- * Temporal JavaScript library v1.2.2
+ * Temporal JavaScript library v1.2.3
  * (C) David Timovski - http://www.davidtimovski.com/MyProjects/Temporal
  */
 
-'use strict';
-
 (function () {
+    'use strict';
+    
     function Temporal(date, format) {
         var self, dateSeparatorRegex, timeSeparatorRegex, msSeparatorRegex, formatRegexArray, formatRegex, formatArray, tokenCount, match, newDate, 
             tokensRegex, tokens, bracketsRegex, formatWithoutBrackets, tokenWithoutBrackets, tokenObj, value, valueInteger, monthIndex, hours, i, j;
