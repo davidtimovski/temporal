@@ -1,5 +1,5 @@
 /*!
- * Temporal JavaScript library v1.2.3
+ * Temporal JavaScript library v1.2.4
  * (C) David Timovski - https://www.davidtimovski.com/MyProjects/Temporal
  */
 
@@ -532,33 +532,37 @@
             temporalArray.push(years + (years > 1 ? ' years' : ' year'));
         }
 
-        difference = difference % this._msInAYear;
-        days = Math.abs(Math.floor(difference / this._msInADay));
-        if (days > 0) {
-            temporalArray.push(days + (days > 1 ? ' days' : ' day'));
-        }
+		if (precision === 'day' || precision === 'hour' || precision === 'minute' || precision === 'second') {
+	        difference = difference % this._msInAYear;
+	        days = Math.abs(Math.floor(difference / this._msInADay));
+	        if (days > 0) {
+	            temporalArray.push(days + (days > 1 ? ' days' : ' day'));
+	        }
+			
+			if (precision === 'hour' || precision === 'minute' || precision === 'second') {
+		        difference = difference % this._msInADay;
+		        hours = Math.abs(Math.floor(difference / this._msInAnHour));
+		        if (hours > 0) {
+		            temporalArray.push(hours + (hours > 1 ? ' hours' : ' hour'));
+		        }
+				
+				if (precision === 'minute' || precision === 'second') {
+		            difference = difference % this._msInAnHour;
+		            minutes = Math.abs(Math.floor(difference / this._msInAMinute));
+		            if (minutes > 0) {
+		                temporalArray.push(minutes + (minutes > 1 ? ' minutes' : ' minute'));
+		            }
 
-        difference = difference % this._msInADay;
-        hours = Math.abs(Math.floor(difference / this._msInAnHour));
-        if (hours > 0) {
-            temporalArray.push(hours + (hours > 1 ? ' hours' : ' hour'));
-        }
-
-        if (precision === 'minute' || precision === 'second') {
-            difference = difference % this._msInAnHour;
-            minutes = Math.abs(Math.floor(difference / this._msInAMinute));
-            if (minutes > 0) {
-                temporalArray.push(minutes + (minutes > 1 ? ' minutes' : ' minute'));
-            }
-
-            if (precision === 'second') {
-                difference = difference % this._msInAMinute;
-                seconds = Math.abs(Math.floor(difference / this._msInASecond));
-                if (seconds > 0) {
-                    temporalArray.push(seconds + (seconds > 1 ? ' seconds' : ' second'));
-                }
-            }
-        }
+		            if (precision === 'second') {
+		                difference = difference % this._msInAMinute;
+		                seconds = Math.abs(Math.floor(difference / this._msInASecond));
+		                if (seconds > 0) {
+		                    temporalArray.push(seconds + (seconds > 1 ? ' seconds' : ' second'));
+		                }
+		            }
+		        }
+			}
+		}
 
         if (temporalArray.length === 0) {
             return 'just now';
